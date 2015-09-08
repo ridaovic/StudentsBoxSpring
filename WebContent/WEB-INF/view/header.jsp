@@ -48,9 +48,7 @@
                         <div class="btn-group btn-group-list btn-group-notification">
                             <a href="#" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                               <i class="fa fa-calendar"></i>
-                              <c:choose>
-									<c:when test="${nbr[0]>0}"><span class="badge">${ nbr[0] }</span></c:when> 
-							 </c:choose>
+                              <span class="badge">5</span>
                             </a>
                             
                         </div><!-- btn-group -->
@@ -58,10 +56,7 @@
                         <div class="btn-group btn-group-list btn-group-notification">
                             <a href="#" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                               <i class="fa fa-bullhorn"></i>
-                              <c:choose>
-									<c:when test="${nbr[1]>0}"><span class="badge">${ nbr[1] }</span></c:when> 
-							 </c:choose>
-                              
+                              <span class="badge">13</span>
                             </a>
                             
                         </div><!-- btn-group -->
@@ -69,9 +64,7 @@
                         <div class="btn-group btn-group-list btn-group-notification">
                             <a href="#" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                               <i class="fa fa-file-text-o"></i>
-                              <c:choose>
-									<c:when test="${nbr[2]>0}"><span class="badge">${ nbr[2] }</span></c:when> 
-							 </c:choose>
+                              <span class="badge">20</span>
                             </a>
                             
                         </div><!-- btn-group -->
@@ -79,9 +72,7 @@
                         <div class="btn-group btn-group-list btn-group-notification">
                             <a href="#" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                               <i class="fa fa-phone"></i>
-                              <c:choose>
-									<c:when test="${nbr[3]>0}"><span class="badge">${ nbr[3] }</span></c:when> 
-							 </c:choose>
+                              <span class="badge">23</span>
                             </a>
                             
                         </div><!-- btn-group -->
@@ -183,32 +174,31 @@
                         </li>
                         
                      
-						<%if(Lien.isCurrent(request.getRequestURL().toString(), "reservations")){ %>
-                            	<li class='active'><a href='#'><c:choose><c:when test="${nbr[0]>0}"><span class="pull-right badge">${ nbr[0] }</span></c:when></c:choose><i class='fa fa-calendar'></i> <span>Reservation</span></a></li>
-                          <% } else { %>
-                            	<li><a href='reservations'><c:choose><c:when test="${nbr[0]>0}"><span class="pull-right badge">${ nbr[0] }</span></c:when></c:choose><i class='fa fa-calendar'></i> <span>Reservation</span></a></li>
-                         <% }  %>
+						<%if(Lien.isCurrent(request.getRequestURL().toString(), "reservations"))
+                            	out.println("<li class='active'><a href='#'><span class='pull-right badge'>3</span><i class='fa fa-calendar'></i> <span>Reservation</span></a></li>");
+                            else 
+                            	out.println("<li><a href='reservations'><span class='pull-right badge'>3</span><i class='fa fa-calendar'></i> <span>Reservation</span></a></li>");
+                            %>
                         
 						
-						<%if(Lien.isCurrent(request.getRequestURL().toString(), "reclamations")){ %>
-                            	<li class='active'><a href='#'><c:choose><c:when test="${nbr[1]>0}"><span class="pull-right badge">${ nbr[1] }</span></c:when></c:choose><i class='fa fa-bullhorn'></i> <span>Reclamations</span></a></li>
-                            <% } else { %>
-                            	<li><a href='reclamations'><c:choose><c:when test="${nbr[1]>0}"><span class="pull-right badge">${ nbr[1] }</span></c:when></c:choose><i class='fa fa-bullhorn'></i> <span>Reclamations</span></a></li>
-                           <% } %>
+						<%if(Lien.isCurrent(request.getRequestURL().toString(), "reclamations"))
+                            	out.println("<li class='active'><a href='#'><span class='pull-right badge'>13</span><i class='fa fa-bullhorn'></i> <span>Reclamations</span></a></li>");
+                            else 
+                            	out.println("<li><a href='reclamations'><span class='pull-right badge'>13</span><i class='fa fa-bullhorn'></i> <span>Reclamations</span></a></li>");
+                            %>
                         
 
-						<%if(Lien.isCurrent(request.getRequestURL().toString(), "documents")){ %>
-                            	<li class='active'><a href='#'><c:choose><c:when test="${nbr[0]>0}"><span class="pull-right badge">${ nbr[2] }</span></c:when></c:choose><i class='fa fa-file-text-o'></i> <span>Documents</span></a></li>
-                          <% } else { %>
-                            	<li><a href='documents'><c:choose><c:when test="${nbr[2]>0}"><span class="pull-right badge">${ nbr[2] }</span></c:when></c:choose><i class='fa fa-file-text-o'></i> <span>Documents</span></a></li>
-                         <% } %>
+						<%if(Lien.isCurrent(request.getRequestURL().toString(), "documents"))
+                            	out.println("<li class='active'><a href='#'><span class='pull-right badge'>20</span><i class='fa fa-file-text-o'></i> <span>Documents</span></a></li>");
+                            else 
+                            	out.println("<li><a href='documents'><span class='pull-right badge'>20</span><i class='fa fa-file-text-o'></i> <span>Documents</span></a></li>");
+                            %>
 
-                        <%if(Lien.isCurrent(request.getRequestURL().toString(), "plaints")){ %>
-                            	<li class='active'><a href='#'><c:choose><c:when test="${nbr[3]>0}"><span class="pull-right badge">${ nbr[3] }</span></c:when></c:choose><i class='fa fa-phone'></i> <span>Plaints</span></a></li>
-                            	
-                       <%  }else{ %>
-                            	<li><a href='plaints'><c:choose><c:when test="${nbr[3]>0}"><span class="pull-right badge">${ nbr[3] }</span></c:when></c:choose><i class='fa fa-phone'></i> <span>Plaints</span></a></li>
-                          <%   } %>
+                        <%if(Lien.isCurrent(request.getRequestURL().toString(), "plaints"))
+                            	out.println("<li class='active'><a href='#'><span class='pull-right badge'>25</span><i class='fa fa-phone'></i> <span>Plaints</span></a></li>");
+                            else 
+                            	out.println("<li><a href='plaints'><span class='pull-right badge'>25</span><i class='fa fa-phone'></i> <span>Plaints</span></a></li>");
+                            %>
                         
                         
 

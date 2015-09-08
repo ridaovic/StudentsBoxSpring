@@ -28,15 +28,9 @@
                                         <td>${emp.numero}</td>
                                         <td>${emp.type}</td>
                                         <td>${emp.nombre}</td>
-                                        <td>
-                                         	<c:choose>
-												    <c:when test="${emp.statut}"><a href="ed-salle/${emp.id}"><i style="width: 100%;" class="fa fa-thumbs-o-up blue"></i></a></c:when> 
-												    <c:otherwise><a href="ed-salle/${emp.id}"><i style="width: 100%;" class="fa fa-thumbs-o-down rouge"></i></a></c:otherwise>   
-											</c:choose>
-                                       </td>
-                                        <td><a href="update-salle-${emp.id}"><i style="width: 100%;" class="fa fa-pencil-square-o blue"></i></a></td>
-                                        <td><a href="delete-salle/${emp.id}"><i style="width: 100%;" class="fa fa-trash-o rouge"></i></a></td>
-                                           
+                                        <td>test</td>
+                                        <td>rida.rhanim@gmail.com</td>
+                                        <td><i class="fa fa-thumbs-o-up blue"></i></td>
                                     </tr>
                                   </c:forEach>
 

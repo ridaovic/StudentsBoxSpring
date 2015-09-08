@@ -81,19 +81,11 @@
                             </div><!-- form-group -->
                         </div><!-- col-sm-12 -->
 						
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                             <div class="form-group">
                                 <label class="control-label">Adresse</label>
                                 <!-- <textarea class="form-control" rows="5" name="adresse"></textarea> -->
                                 <form:input path="adresse"  class="form-control"/>
-                            </div><!-- form-group -->
-                        </div><!-- col-sm-12 -->
-                        
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label class="control-label">Mot de passe</label>
-                                <!-- <textarea class="form-control" rows="5" name="adresse"></textarea> -->
-                                <form:input path="motPasse"  class="form-control"/>
                             </div><!-- form-group -->
                         </div><!-- col-sm-12 -->
 

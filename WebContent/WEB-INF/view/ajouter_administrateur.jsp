@@ -18,7 +18,6 @@
                 <div class="panel-body">
                 <form:form method="post" action="add-admin" commandName="administrateur">
                 <form:hidden path="id" />
-               
                		<div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
@@ -72,19 +71,11 @@
                             </div><!-- form-group -->
                         </div><!-- col-sm-6 -->
 						
-						<div class="col-sm-6">
+						<div class="col-sm-12">
                             <div class="form-group">
                                 <label class="control-label">Date Naissance</label>
                                 <!-- <textarea class="form-control" rows="5" name="adresse"></textarea> -->
                                 <form:input path="dateNaissance"  class="form-control" placeholder="mm/dd/yyyy" id="datepicker"/>
-                            </div><!-- form-group -->
-                        </div><!-- col-sm-12 -->
-                        
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label class="control-label">Mot de passe</label>
-                                <!-- <textarea class="form-control" rows="5" name="adresse"></textarea> -->
-                                <form:input path="motPasse"  class="form-control"/>
                             </div><!-- form-group -->
                         </div><!-- col-sm-12 -->
 						
